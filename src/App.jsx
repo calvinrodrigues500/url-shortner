@@ -3,7 +3,7 @@ import { Home } from "./pages"
 function App() {
 
   return (
-    <main className="px-48 py-10">
+    <main className="px-48 py-10 h-screen">
     <Home />
     </main>
   )
