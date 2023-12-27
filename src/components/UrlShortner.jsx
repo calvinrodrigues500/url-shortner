@@ -31,20 +31,27 @@ const UrlShortner = () => {
 
   return (
     <div className="flex flex-col h-full items-center justify-center gap-10">
+      <span className="flex flex-col items-center gap-4">
+        <h1 className="text-3xl font-bold">Link less, Share more</h1>
+        <h3 className="text-lg">Your Shortcut to Seamless Connections!</h3>
+      </span>
       <div className="flex items-center justify-center gap-1 w-full">
         <input
           type="text"
           name="url"
           placeholder="Paste / Enter your URL here"
           className="border-2 rounded-lg self-center
-        h-16 w-[50%] p-8 border-none outline-none"
+        h-16 w-[50%] p-8 border-slate-300 outline-none text-lg"
           value={longUrl}
           onChange={(e) => setLongUrl(e.target.value)} />
         <button
-          className="self-center bg-blue-400 p-5 rounded-lg text-white font-semibold" onClick={() => shortenUrl(longUrl)}>Shorten</button>
+          className="self-center bg-slate-800 p-5 rounded-lg text-white font-semibold" onClick={() => shortenUrl(longUrl)}>Shorten</button>
       </div>
       <div className="flex items-center justify-center gap-10 h-10 w-1/2 self-center">
-        <h3>{shortUrl?.message}</h3>
+        <a
+          href={shortUrl?.message}
+          target="_blank"
+          rel="noopener noreferrer">{shortUrl?.message}</a>
         {shortUrl && <img
           width="20"
           height="20"
@@ -55,7 +62,6 @@ const UrlShortner = () => {
         }
       </div>
       <div className="flex items-center justify-center gap-10 h-10 w-1/2 self-center">
-
         {
           isCopied
           && <div className="flex gap-2 p-2 px-5 bg-green-400 font-semibold rounded-full">
