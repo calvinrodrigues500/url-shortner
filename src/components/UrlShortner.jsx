@@ -33,19 +33,19 @@ const UrlShortner = () => {
     <div className="flex flex-col h-full items-center justify-center gap-10">
       <span className="flex flex-col items-center gap-4">
         <h1 className="text-3xl font-bold">Link less, Share more</h1>
-        <h3 className="text-lg">Your Shortcut to Seamless Connections!</h3>
+        <p className="md:text-lg">Your Shortcut to Seamless Connections!</p>
       </span>
-      <div className="flex items-center justify-center gap-1 w-full">
+      <div className="flex flex-col md:flex-row items-center justify-center gap-8 md:gap-1 w-full">
         <input
           type="text"
           name="url"
           placeholder="Paste / Enter your URL here"
           className="border-2 rounded-lg self-center
-        h-16 w-[50%] p-8 border-slate-300 outline-none text-lg"
+        h-16 w-full md:w-[50%] p-5 md:p-8 border-slate-300 outline-none text-lg"
           value={longUrl}
           onChange={(e) => setLongUrl(e.target.value)} />
         <button
-          className="self-center bg-slate-800 p-5 rounded-lg text-white font-semibold" onClick={() => shortenUrl(longUrl)}>Shorten</button>
+          className="self-center bg-slate-800 p-4 md:p-5 rounded-lg text-white font-semibold" onClick={() => shortenUrl(longUrl)}>Shorten</button>
       </div>
       <div className="flex items-center justify-center gap-10 h-10 w-1/2 self-center">
         <a
